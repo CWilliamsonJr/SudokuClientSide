@@ -1,0 +1,134 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+        <title>Sudoku:Client-Side Processing</title>
+        <link href="styles/stylesheet.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="scripts/jquery-1.8.3.js"></script>
+        <script type="text/javascript" src="scripts/javascript-client_side.js"></script>
+        
+    </head>
+    <body>
+         <form name="Sudoku" class="gameForm" id="mainform"> 
+              <div id="gameboard" >
+                <!--Row 1-->
+                <span id="row_1"> 
+                    <span class="region_1 col_1" id="1"></span>
+                    <span class="region_1 col_2" id="2"></span>
+                    <span class="region_1 col_3" id="3"></span>
+                    <span class="region_2 col_4" id="4"></span>
+                    <span class="region_2 col_5" id="5"></span>
+                    <span class="region_2 col_6" id="6"></span>
+                    <span class="region_3 col_7" id="7"></span>
+                    <span class="region_3 col_8" id="8"></span>
+                    <span class="region_3 col_9" id="9"></span> 
+                </span>
+                <!--Row 2-->
+                <span id="row_2"> 
+                    <span class="region_1 col_1" id="10"></span> 
+                    <span class="region_1 col_2" id="11"></span>
+                    <span class="region_1 col_3" id="12"></span>
+                    <span class="region_2 col_4" id="13"></span>
+                    <span class="region_2 col_5" id="14"></span>
+                    <span class="region_2 col_6" id="15"></span> 
+                    <span class="region_3 col_7" id="16"></span>
+                    <span class="region_3 col_8" id="17"></span>
+                    <span class="region_3 col_9" id="18"></span> 
+                </span>
+                <!--Row 3-->
+                <span id="row_3">
+                    <span class="region_1 col_1" id="19"></span>
+                    <span class="region_1 col_2" id="20"></span>
+                    <span class="region_1 col_3" id="21"></span>
+                    <span class="region_2 col_4" id="22"></span>
+                    <span class="region_2 col_5" id="23"></span>
+                    <span class="region_2 col_6" id="24"></span> 
+                    <span class="region_3 col_7" id="25"></span>
+                    <span class="region_3 col_8" id="26"></span>
+                    <span class="region_3 col_9" id="27"></span>
+                </span>
+                <!--Row 4-->
+                <span id="row_4"> 
+                    <span class="region_4 col_1" id="28"></span> 
+                    <span class="region_4 col_2" id="29"></span>
+                    <span class="region_4 col_3" id="30"></span>
+                    <span class="region_5 col_4" id="31"></span>
+                    <span class="region_5 col_5" id="32"></span>
+                    <span class="region_5 col_6" id="33"></span> 
+                    <span class="region_6 col_7" id="34"></span>
+                    <span class="region_6 col_8" id="35"></span>
+                    <span class="region_6 col_9" id="36"></span> 
+                </span>
+                <!--Row 5-->
+                <span id="row_5"> 
+                    <span class="region_4 col_1" id="37"></span> 
+                    <span class="region_4 col_2" id="38"></span>
+                    <span class="region_4 col_3" id="39"></span>
+                    <span class="region_5 col_4" id="40"></span>
+                    <span class="region_5 col_5" id="41"></span>
+                    <span class="region_5 col_6" id="42"></span> 
+                    <span class="region_6 col_7" id="43"></span>
+                    <span class="region_6 col_8" id="44"></span>
+                    <span class="region_6 col_9" id="45"></span> 
+                </span>
+                <!--Row 6-->
+                <span id="row_6"> 
+                    <span class="region_4 col_1" id="46"></span> 
+                    <span class="region_4 col_2" id="47"></span>
+                    <span class="region_4 col_3" id="48"></span>
+                    <span class="region_5 col_4" id="49"></span>
+                    <span class="region_5 col_5" id="50"></span>
+                    <span class="region_5 col_6" id="51"></span> 
+                    <span class="region_6 col_7" id="52"></span>
+                    <span class="region_6 col_8" id="53"></span>
+                    <span class="region_6 col_9" id="54"></span> 
+                </span>
+                <!--Row 7-->
+                <span id="row_7"> 
+                    <span class="region_7 col_1" id="55"></span> 
+                    <span class="region_7 col_2" id="56"></span>
+                    <span class="region_7 col_3" id="57"></span>
+                    <span class="region_8 col_4" id="58"></span>
+                    <span class="region_8 col_5" id="59"></span>
+                    <span class="region_8 col_6" id="60"></span> 
+                    <span class="region_9 col_7" id="61"></span>
+                    <span class="region_9 col_8" id="62"></span>
+                    <span class="region_9 col_9" id="63"></span> 
+                </span>
+                <!--Row 8-->
+                <span id="row_8"> 
+                    <span class="region_7 col_1" id="64"></span> 
+                    <span class="region_7 col_2" id="65"></span>
+                    <span class="region_7 col_3" id="66"></span>
+                    <span class="region_8 col_4" id="67"></span>
+                    <span class="region_8 col_5" id="68"></span>
+                    <span class="region_8 col_6" id="69"></span> 
+                    <span class="region_9 col_7" id="70"></span>
+                    <span class="region_9 col_8" id="71"></span>
+                    <span class="region_9 col_9" id="72"></span> 
+                </span>
+                <!--Row 9-->
+                <span id="row_9"> 
+                    <span class="region_7 col_1" id="73"></span> 
+                    <span class="region_7 col_2" id="74"></span>
+                    <span class="region_7 col_3" id="75"></span>
+                    <span class="region_8 col_4" id="76"></span>
+                    <span class="region_8 col_5" id="77"></span>
+                    <span class="region_8 col_6" id="78"></span> 
+                    <span class="region_9 col_7" id="79"></span>
+                    <span class="region_9 col_8" id="80"></span>
+                    <span class="region_9 col_9" id="81"></span> 
+                </span>
+            </div>           
+         <input type="Submit"  value="Check Your Answers" id="check" name="Submit" />
+         <input type="Reset"  value="Reset Board" id="Reset" name="Reset" />
+         <input type="Submit"  value="New Puzzle" id="new_puzzle" name="new_puzzle" />       
+        </form>
+        <div id="details"></div>
+    </body>
+</html>

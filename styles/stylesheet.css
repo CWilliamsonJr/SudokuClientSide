@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#gameboard{ /*Size of the entire gameboard*/	
+	 width:400px;
+	 height:auto;
+	 margin:auto;
+         clear: left;
+        
+}
+#errors{
+    margin-left: 5px;
+        
+}
+
+span span{
+	border: solid medium;	
+}
+
+/*----- Squaring off the outside borders ----*/
+.col_1{
+   border-left-width: 10px;     
+}
+.col_9{
+    border-right-width: 10px;
+}
+#row_1 span{
+    border-top-width: 10px;    
+}
+#row_9 span{
+    border-bottom-width: 10px;  
+}
+/*-----------------*/
+
+
+/* Making the 3x3 Areas */
+.col_3,.col_6{
+    border-right-width: 10px;    
+}
+#row_3 span,#row_6 span{
+    border-bottom-width: 10px; 
+    
+}
+/*---------------*/
+
+#row_1 span,#row_2 span,#row_4 span,#row_5 span,#row_7 span,#row_8 span{/*Controls the lines inside the 3x3 area*/
+    border-bottom-width: thin;     
+}
+
+#row_1,#row_2,#row_3,#row_4,#row_5,#row_6,#row_7,#row_8,#row_9{ /* sets the size of the rows */
+	 width: 500px;
+	 height: 40px;	 
+	 clear:both;
+	 position:static;
+	
+}
+
+#row_1 span,#row_2 span,#row_3 span,#row_4 span,#row_5 span,#row_6 span,#row_7 span,#row_8 span,#row_9 span { /*Size of the 81 boxes*/	
+	
+	width: 35px;
+	height: 35px;	
+	float: left;
+	margin-left: -1px;
+	margin-top: -1px;  
+        text-align:center;       
+        
+}
+.hidden{
+    width:30px;
+    height: 10px;
+    text-align: center;
+    border:hidden; 
+    border-bottom-width: 20px;  
+    
+}
